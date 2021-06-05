@@ -7,5 +7,8 @@
     "test": "mocha"
   },
   "author": "Kimberly Marroquin",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^8.4.0"
+  }
 }
