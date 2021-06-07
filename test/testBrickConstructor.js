@@ -3,17 +3,16 @@ var lego = require('../legos');
 const Brick = lego.Brick;
 
 describe('BrickConstructor', function() {
+var testBrick = new Brick (5, "yellow");
 	describe('BrickSize', function() {
 		it('should equal 5', function() {
-			Brick.size = 5;
-			assert.equal(5, Brick.size);
+			assert.equal(5, testBrick.size);
 		});
 	});
 
 	describe('BrickColor', function() {
 		it('should equal yellow', function() {
-			Brick.color = "yellow";
-			assert.equal("yellow", Brick.color);
+			assert.equal("yellow", testBrick.color);
 		});
 	});
 });
