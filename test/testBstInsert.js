@@ -20,8 +20,10 @@ describe('BST Insert Method', function() {
 			var rootBrick = new Brick(4, "yellow");
 			var brick3 = new Brick(3, "yellow");
 			var tree = new BST();
+
 			tree.insert(rootBrick);
 			tree.insert(brick3);
+
 			assert.equal(tree.root.left.data, brick3);
 		});
 	});
@@ -31,8 +33,10 @@ describe('BST Insert Method', function() {
 			var rootBrick = new Brick(4, "yellow");
 			var brick5 = new Brick(5, "yellow");
 			var tree = new BST();
+
 			tree.insert(rootBrick);
 			tree.insert(brick5);
+
 			assert.equal(tree.root.right.data, brick5);
 		});
 	});
@@ -43,9 +47,11 @@ describe('BST Insert Method', function() {
 			var brick3 = new Brick(3, "yellow");
 			var brick5 = new Brick(5, "yellow");
 			var tree = new BST();
+
 			tree.insert(rootBrick);
 			tree.insert(brick3);
 			tree.insert(brick5);
+
 			assert.equal(tree.root.right.data, brick5);
 		});
 	});
@@ -59,12 +65,14 @@ describe('BST Insert Method', function() {
 			var brick5 = new Brick(5, "yellow");
 			var brick6 = new Brick(6, "yellow");
 			var tree = new BST();
+
 			tree.insert(rootBrick);
 			tree.insert(brick2);
 			tree.insert(brick1);
 			tree.insert(brick3);
 			tree.insert(brick5);
 			tree.insert(brick6);
+
 			assert.equal(tree.root.left.right.data, brick3);
 		});
 	});
