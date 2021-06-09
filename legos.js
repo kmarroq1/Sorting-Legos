@@ -10,8 +10,9 @@ function Brick(size, color) {
 }
 
 function LegoPile() {
-this.insertBrick = insertBrick;
-this.hasBrick = hasBrick;
+	this.insertBrick = insertBrick;
+	this.hasBrick = hasBrick;
+	this.countLegoPile = countLegoPile;
 	this.legos = {
 		red: new BST(),
 		green: new BST(),
@@ -34,4 +35,12 @@ function hasBrick(size, color) {
 	} else {
 		return false;
 	}
+}
+
+function countLegoPile() {
+	var count = 0;
+	for (const key in this.legos) {
+		count += this.legos[key].bstCount();
+	}
+	return count;
 }
