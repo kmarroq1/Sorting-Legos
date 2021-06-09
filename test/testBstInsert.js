@@ -16,7 +16,7 @@ describe('BST Insert Method', function() {
 	});
 
 	describe('Root Plus Left Child', function() {
-		it('should equal brick3', function() {
+		it('should equal left brick and root', function() {
 			var rootBrick = new Brick(4, "yellow");
 			var brick3 = new Brick(3, "yellow");
 			var tree = new BST();
@@ -24,12 +24,13 @@ describe('BST Insert Method', function() {
 			tree.insert(rootBrick);
 			tree.insert(brick3);
 
+			assert.equal(tree.root.data, rootBrick);
 			assert.equal(tree.root.left.data, brick3);
 		});
 	});
 
 	describe('Root Plus Right Child', function() {
-		it('should equal brick5', function() {
+		it('should equal right brick and root', function() {
 			var rootBrick = new Brick(4, "yellow");
 			var brick5 = new Brick(5, "yellow");
 			var tree = new BST();
@@ -37,12 +38,13 @@ describe('BST Insert Method', function() {
 			tree.insert(rootBrick);
 			tree.insert(brick5);
 
+			assert.equal(tree.root.data, rootBrick);
 			assert.equal(tree.root.right.data, brick5);
 		});
 	});
 
 	describe('Root Plus Left and Right Child', function() {
-		it('should equal brick3 and brick5', function() {
+		it('should equal left, right, and root bricks', function() {
 			var rootBrick = new Brick(4, "yellow");
 			var brick3 = new Brick(3, "yellow");
 			var brick5 = new Brick(5, "yellow");
@@ -52,12 +54,14 @@ describe('BST Insert Method', function() {
 			tree.insert(brick3);
 			tree.insert(brick5);
 
+			assert.equal(tree.root.data, rootBrick);
 			assert.equal(tree.root.right.data, brick5);
+			assert.equal(tree.root.left.data, brick3);
 		});
 	});
 
 	describe('General Case', function() {
-		it('should equal brick3', function() {
+		it('should equal all bricks', function() {
 			var rootBrick = new Brick(4, "yellow");
 			var brick1 = new Brick(1, "yellow");
 			var brick2 = new Brick(2, "yellow");
@@ -73,7 +77,12 @@ describe('BST Insert Method', function() {
 			tree.insert(brick5);
 			tree.insert(brick6);
 
+			assert.equal(tree.root.data, rootBrick);
+			assert.equal(tree.root.right.data, brick5);
+			assert.equal(tree.root.left.data, brick2);
 			assert.equal(tree.root.left.right.data, brick3);
+			assert.equal(tree.root.left.left.data, brick1);
+			assert.equal(tree.root.right.right.data, brick6);
 		});
 	});
 });
