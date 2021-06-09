@@ -11,6 +11,7 @@ function Brick(size, color) {
 
 function LegoPile() {
 this.insertBrick = insertBrick;
+this.hasBrick = hasBrick;
 	this.legos = {
 		red: new BST(),
 		green: new BST(),
@@ -24,4 +25,13 @@ this.insertBrick = insertBrick;
 
 function insertBrick(brick) {
 	this.legos[brick.color].insert(brick);
+}
+
+function hasBrick(size, color) {
+	var brickToFind = new Brick(size,color);
+	if (this.legos[color].find(brickToFind) != null) {
+		return true;
+	} else {
+		return false;
+	}
 }

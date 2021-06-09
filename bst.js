@@ -13,9 +13,10 @@ function show() {
 }
 
 function BST() {
-   this.root = null;
-   this.insert = insert;
-   this.inOrder = inOrder;
+	this.root = null;
+	this.insert = insert;
+	this.find = find;
+	this.inOrder = inOrder;
 }
 
 function insert(data) {
@@ -44,6 +45,26 @@ function insert(data) {
          }
       }
    }
+}
+
+function find(data) {
+	if (this.root == null) {
+		return null;
+	}
+   var current = this.root;
+   
+   while (current.data.size != data.size) {
+      if (data.size < current.data.size) {
+         current = current.left;
+      }
+      else {
+         current = current.right;
+      }
+      if (current == null) {
+         return null;
+      }
+   }
+   return current;
 }
 
 function inOrder(node) {
